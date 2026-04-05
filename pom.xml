@@ -98,8 +98,7 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
-			<plugins>
-        <plugin>
+			 <plugin>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
@@ -112,6 +111,7 @@
                 </excludes>
             </configuration>
         </plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
