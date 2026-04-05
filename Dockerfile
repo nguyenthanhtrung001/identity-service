@@ -4,11 +4,15 @@
 FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy toàn bộ mã nguồn vào container
-COPY . .
+# Copy pom trước để tận dụng cache cho dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
 
-# Build project, bỏ qua test
-RUN mvn clean package -DskipTests
+# Copy toàn bộ mã nguồn
+COPY src ./src
+
+# Build project, bỏ qua test hoàn toàn
+RUN mvn clean package -Dmaven.test.skip=true -B
 
 # Kiểm tra file WAR
 RUN ls -la /app/target
