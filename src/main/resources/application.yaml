@@ -23,4 +23,4 @@ jwt:
 
 app:
   services:
-    employee: http://localhost:8085
+    employee: https://srv-employee-deploy-ofa2.onrender.com
