@@ -12,7 +12,7 @@ import com.devteria.identity.dto.response.UserProfileResponse;
 
 import java.util.List;
 
-@FeignClient(name = "employee-service", url = "http://localhost:8085/api/employees",
+@FeignClient(name = "employee-service", url = "https://srv-employee-deploy-ofa2.onrender.com",
         configuration = { AuthenticationRequestInterceptor.class })
 public interface ProfileClient {
     @PutMapping(value = "/update-account/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
